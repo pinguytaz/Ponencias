@@ -1,0 +1,6 @@
+HF_TOKEN=hf_PXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+MODELO=Qwen/Qwen2.5-Coder-1.5B-Instruct
+CACHE_DIR = "/media/Datos1/PRJs/Charlas/IntroAgentesIA/Prog/MiHF/QWEB2_5_15B"  
+
+

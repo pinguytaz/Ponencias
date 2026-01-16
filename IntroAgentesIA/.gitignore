@@ -1,0 +1,15 @@
+# Para no subir los DOC y Excell
+*.ods
+*.odt
+*.odp
+*.xopp
+*.xcf
+*.elf
+NoPasar/
+__pycache__/
+.env
+ia/
+MiHF/
+__pycache__/
+
+
