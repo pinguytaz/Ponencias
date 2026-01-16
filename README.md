@@ -13,9 +13,9 @@ Tenemos los PDFs con las presentaciones y el enlace al código fuente de la pone
   
     PoC con lector RC522 y solicitud de autorización a Servidor Python, realizado en charla Tech de HackMadrid.  
 
-- **IntroAgentesIA [Fuentes "PoC IntroAgentesIA"](https://github.com/pinguytaz/XX)**   
+- **IntroAgentesIA [Fuentes "PoC IntroAgentesIA"](https://github.com/pinguytaz/Ponencias/tree/main/IntroAgentesIA)**   
   
-    PoC con agente multi función realizado directamente sin FrameWork, funcionamiento con modelo descargado en local desde HugginFace.  
+    PoC con agente multi-función realizado directamente sin FrameWork, funcionamiento con modelo descargado en local desde HugginFace.  
   
   
 <br><br>
