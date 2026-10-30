@@ -27,7 +27,7 @@ import src.Herramientas as herramientas
 def main(argv):
     load_dotenv()
     #MODELO=os.getenv('MODELO')  
-    HF_TOKEN=os.getenv('HF_TOKEN')
+    #HF_TOKEN=os.getenv('HF_TOKEN')
     cache_dir=os.getenv('CACHE_DIR')
     os.environ["HF_HUB_OFFLINE"] = "1"
     os.environ["HF_HOME"] = cache_dir
@@ -43,7 +43,7 @@ def main(argv):
 
     # Ya tenemos la respuesta de que debemos ejecutar
     print("----- Inicia Salidas procesando ----------")
-    print("Salida del agente: ",salidaAgente)
+    print("Salida del agente: \n",salidaAgente)
 
     # Extraemos acciones y ejecutamos herramientas
     datosAccion = herramientas.obtieneAccion(salidaAgente)

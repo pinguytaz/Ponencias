@@ -17,6 +17,11 @@ Tenemos los PDFs con las presentaciones y el enlace al código fuente de la pone
   
     PoC con agente multi-función realizado directamente sin FrameWork, funcionamiento con modelo descargado en local desde HugginFace.  
   
+- **TOTP con ESP32 [Fuentes "TOTP-ESP32"](https://github.com/pinguytaz/TOTP-ESP32-PAM)**   
+  
+    PDesarrollo de una llave TOTP-USB con ESP32 para el control de acceso a nuestro PC, con módulo PAM en Linux.  
+  
+  
   
 <br><br>
 

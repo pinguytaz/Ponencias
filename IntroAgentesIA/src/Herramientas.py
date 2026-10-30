@@ -25,7 +25,7 @@ def obtieneAccion(text) -> list[dict]:
 #   Funcion tonta que simula la conexion al clima
 #####
 def tontaClima(location):
-    res = f"{location} es muy fria en Verano"
+    res = f" Tendremos que calcular el tiempo en: {location}"
     return res
 
 #######

@@ -16,6 +16,13 @@ def cargaModelo(cache_dir):
            device_map="auto",
            local_files_only=True)
 
+    # Definimos que el modelo es para evaluación no se esta entrenando.
+    # Se apaga dropout,  predicciones son estables y reproducibles.
+    # Capas BatchNorm usan estadísticas de inferencia, acumuladas del entrenamiento
+
+    # model.eval() asegura que BatchNorm use las estadísticas correctas.
+    modelo.eval()
+
     return tokenizer, modelo
 
 

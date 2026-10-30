@@ -27,6 +27,7 @@ def main(argv):
     HF_TOKEN=os.getenv('HF_TOKEN')
     cache_dir=os.getenv('CACHE_DIR')
     os.environ["HF_HOME"] = cache_dir
+    os.environ["HF_HUB_CACHE"] = cache_dir
 
     snapshot_download(repo_id=MODELO,
            local_dir=cache_dir,  # Copia completa local

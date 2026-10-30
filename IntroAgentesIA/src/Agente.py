@@ -58,6 +58,7 @@ def agente_react(pregunta, tokenizer, model, max_pasos=5):
     # salidas[0] primera lista de resultados, primera pregunta
     #salidaAgente = tokenizer.decode(salidas[0][IDsEntradas.shape[1]:], skip_special_tokens=True)    #Respuesta con tokens
     #print(f"****INI_MSG**** {tokenizer.decode(salidas[0])} *****FIN_MSG****")
+
     salidaAgente = tokenizer.decode(salidas[0][IDsEntradas["input_ids"].shape[1]:], skip_special_tokens=True) # Solo respuesta de dic.
 
     return salidaAgente, messages
@@ -97,20 +98,27 @@ def agente_reactPiPe(pregunta, tokenizer, generator):
 ############################# PROMPT ##################################################
 #################################################################################################  
 # Definimos el prompt del rol del sistema indicando herramientas
-#	Quien Soy
-#	Cual es el objetivo
+#	Quien Soy y objetivo
 #	Funciones de las que se dispone 
-#       Como nos informa de estas funciones, poniendo ejemplo.
-#	Formato de como informarnos de la funcion y parametro a utilizar (Especial, JSON, XML,....
+#       Reglas/Restricciones y como nos informa de estas funciones, poniendo ejemplo.
+#	Formato de salida  ejemplo JSON icon ejemplos
 ##################################################################################################
-SYSTEM_PROMPT = """Eres un asistente que debe responder lo mejor que puedas y puedes llamar a una o mas funciones para ayudar a generar la consulta del usuario. Estas son las funciones disponibles:
+SYSTEM_PROMPT = """Eres un asistente que debe responder lo mejor que puedas llamando a funciones predefinidas, podras llamar a una o más funciones para ayudar a generar la consulta del usuario. 
 
-FUNC(elTiempo:Madrid)   Nos da el tiempo meteorologico: temperatura, lluvias, viento, nubes, clima
-FUNC(laFecha)           Obtenemos la hora y fecha del sistema.
+FUNCIONES DISPONIBLES
+Estas son las funciones disponibles:
 
-si se pregunta por varia localidades se lanzara una funcion par cada una de ellas.
+FUNC(elTiempo:Madrid)		Nos da el tiempo meteorologico: temperatura, lluvias, viento, nubes, clima
+FUNC(laFecha)			Obtenemos la hora y fecha del sistema.
 
-Ejemplos:
+REGLAS DE OPERACIÓN (ESTRICTAS)
+
+- No converses ni expliques.  
+- Tu salida debe ser únicamente llamadas a funciones y estas funciones deben ser unicamente las disponibles.
+- Si se pregunta por varia localidades se lanzara una funcion por cada una de ellas.
+
+PROTOCOLO de RESPUESTA (Ejemplos)
+
 ¿Qué tiempo en Madrid? -> FUNC(elTiempo:Madrid)
 
 ¿Qué tiempo hace en Madrid y Barcelona? -> FUNC(elTiempo:Madrid) 
@@ -121,9 +129,9 @@ FUNC(elTiempo:Barcelona)
 ¿Tiempo + hora? -> FUNC(elTiempo:Alcobendas) 
 FUNC(laFecha)
 
+
 SIEMPRE usa el siguiente formato:
 
-FUNC(nombre:parametro)
+FUNC(funcion:parametro)
 
-¡Comienza ahora! Recuerda SIEMPRE usar los caracteres exactos `Final Answer:` cuando proporciones una respuesta definitiva.
 """
