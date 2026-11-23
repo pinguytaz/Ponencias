@@ -21,7 +21,7 @@ Tenemos los PDFs con las presentaciones y el enlace al código fuente de la pone
   
     PDesarrollo de una llave TOTP-USB con ESP32 para el control de acceso a nuestro PC, con módulo PAM en Linux.  
   
-- **LlamaCPP [Fuentes "TOTP-ESP32"](https://github.com/pinguytaz/IA)**   
+- **LlamaCPP [Fuentes "GestorLlamaCPP"](https://github.com/pinguytaz/IA/tree/main/Llama.cpp/GestorLlamaCPP)**   
     Introducción a la programación con "llama.cpp" con el desarrollo de un Gestor, que permite la carga de multiples modelos en memoria y ya se dispone en el el bucle de inferir, sin necesidad de programarlo.  
   
   
